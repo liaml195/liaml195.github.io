@@ -1,0 +1,33 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.categories {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.categories li {
+    margin: 0 10px;
+    position: relative;
+}
+
+.categories li + li::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 20px;
+    border-left: 1px solid #ccc;
+}
+
+.category-content {
+    display: none;
+    text-align: center;
+}
