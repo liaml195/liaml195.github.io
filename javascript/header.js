@@ -32,3 +32,5 @@ document.addEventListener('click', function(event) {
         dropdown.classList.remove('show');
     }
 });
+
+$(function(){ $("head").load("head.html") });
