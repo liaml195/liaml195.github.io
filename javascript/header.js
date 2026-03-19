@@ -32,3 +32,27 @@ document.addEventListener('click', function(event) {
         dropdown.classList.remove('show');
     }
 });
+
+
+
+const buttons = document.querySelectorAll("[data-theme]");
+
+// Load saved theme
+const savedTheme = localStorage.getItem("theme") || "light";
+document.body.classList.add(`theme-${savedTheme}`);
+
+// Add click listeners
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        const theme = button.dataset.theme;
+
+        // Remove all theme classes
+        document.body.classList.remove("theme-light", "theme-dark", "theme-contrast");
+
+        // Add selected theme
+        document.body.classList.add(`theme-${theme}`);
+
+        // Save it
+        localStorage.setItem("theme", theme);
+    });
+});

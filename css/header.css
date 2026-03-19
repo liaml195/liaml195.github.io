@@ -1,11 +1,19 @@
+:root {
+    --bg: aliceblue;
+    --text: black;
+}
+
 * {
     font-family: 'Poppins'
 }
 
 body {
-    background-color: aliceblue;
+    background-color: var(--bg);
+    color: var(--text);
     margin: 0;
     padding: 0;
+
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .navbar {
@@ -34,7 +42,7 @@ li {
 }
 
 a {
-    color: black;
+    color: var(--text);
     text-decoration: none;
     position: relative;
 }
@@ -42,8 +50,8 @@ a {
 li a::after {
     content: '';
     position: absolute;
-    background-color: black;
-    color: black;
+    background-color: var(--bg);
+    color: var(--text);
     width: 100%;
     height: 3px;
     left: 0;
@@ -108,8 +116,59 @@ input[type=search]::placeholder {
 
 
 .sidebar {
-    width: 15%;
+    width: 260px;
     height: 100%;
     border: 1px solid black;
+    padding: 1.5em;
+}
 
+.accessibility-group {
+    margin-bottom: 2em;
+}
+
+.accessibility-group h3 {
+    margin-bottom: 0.5em;
+    font-size: 1.1rem;
+}
+
+.controls {
+    display: flex;
+    gap: 0.5em;
+}
+
+.controls button {
+    flex: 1;
+    padding: 0.5em;
+    border: none;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.controls button:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.accessibility-group label {
+    display: block;
+    margin-bottom: 0.5em;
+    cursor: pointer;
+}
+
+
+
+
+
+
+/* Dark Mode Option */
+
+body.theme-dark {
+    --bg: #121212;
+    --text: #f1f1f1;
+}
+
+body.theme-contrast {
+    --bg: black;
+    --text: yellow;
 }
