@@ -1,8 +1,26 @@
+
+/* This styling is strictly for the projects page and is not used anywhere else on the site, unless otherwise specified. */
+
+
+/* Page Formatting */
+
+.container {
+    display: flex;
+}
+
 .content {
     display: flex;
+    flex: 1;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+    border: 1px solid black;
+    padding-left: 10%;
+    padding-right: 10%;
 }
+
+
+/* Main Content */
+
 
 .categories {
     list-style-type: none;
@@ -32,17 +50,65 @@
     text-align: center;
 }
 
+
+/* Project Cards (Clickable Links) */
+
+
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2em;
+    width: 100%;
 }
 
 .item {
+    display: flex;
+}
+
+.clickable {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+
     padding: 2em;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
-    color: white;
-    text-align: center;
-    border-radius: 8px;
-    font-size: 2rem;
+    border-radius: 12px;
+
+    background: rgba(0, 0, 0, 0.1);
+    color: black;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.clickable:hover {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.project-link {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+
+
+
+/*** Media Reponses ***/
+
+
+/* Project Cards */
+
+@media (max-width: 900px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
 }

@@ -102,3 +102,14 @@ input[type=search]::placeholder {
 .dropdown.show .dropdown-content {
     display: block;
 }
+
+
+/* Sidebar Formatting */
+
+
+.sidebar {
+    width: 15%;
+    height: 100%;
+    border: 1px solid black;
+
+}
