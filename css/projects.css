@@ -1,7 +1,3 @@
-
-/* This styling is strictly for the projects page and is not used anywhere else on the site, unless otherwise specified. */
-
-
 :root {
     --bg: aliceblue;
     --text: black;
@@ -13,23 +9,12 @@
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Page Formatting */
-
-.content {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    align-items: stretch;
-    border: 1px solid black;
-    padding-left: 10%;
-    padding-right: 10%;
-}
-
 
 /* Main Content */
 
 
 .categories {
+    height: 50px;
     list-style-type: none;
     padding: 0;
     margin: 20px 0;
@@ -53,7 +38,20 @@
 }
 
 .category {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+
+    font: inherit;
+    font-size: 1.3rem;
     color: var(--text);
+    cursor: pointer;
+
+    position: relative;
+    display: inline-block;
+
+    transition: font-size 0.2s ease-in-out;
 }
 
 .category::after {
@@ -63,12 +61,16 @@
     bottom: -6px;
     width: 100%;
     height: 3px;
-    background-color: currentColor; /* 👈 adapts to theme */
+    background-color: currentColor;
     border-radius: 5px;
 
     transform: scaleX(0);
     transform-origin: right;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s;
+}
+
+.category.active {
+    font-size: 1.5rem;
 }
 
 .category:hover::after {
@@ -78,6 +80,13 @@
 
 .category-content {
     display: none;
+}
+
+.category-content.active {
+    display: block;
+}
+
+.category-title {
     text-align: center;
 }
 

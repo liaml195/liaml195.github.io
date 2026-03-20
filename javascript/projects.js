@@ -18,3 +18,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const buttons = document.querySelectorAll(".category");
+    const contents = document.querySelectorAll(".category-content");
+
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+
+            buttons.forEach(btn => btn.classList.remove("active"));
+            contents.forEach(content => content.classList.remove("active"));
+
+            button.classList.add("active");
+
+            const target = button.dataset.category;
+            document.getElementById(target).classList.add("active");
+        });
+    });
+
+});

@@ -13,11 +13,11 @@
 
 <body>
 
-    <div class="page">
+    <main class="page">
 
         <!-- Navbar -->
 
-        <div class="navbar">
+        <header class="navbar">
             <h1 class="title">Projects</h1>
             <div class="dropdown">
                 <input type="search" name="search" id="searchBar" placeholder="Search...">
@@ -29,7 +29,7 @@
                 <li id="projects"><a href="projects.html" class="href">Projects</a></li>
                 <li id="education"><a href="education.html" class="href">Education</a></li>
             </ul>
-        </div>
+        </header>
 
         <div class="container">
 
@@ -38,13 +38,13 @@
 
             <div class="content">
                 <ul class="categories">
-                    <li><a href="#" class="category" data-category="python">Python Games</a></li>
-                    <li><a href="#" class="category" data-category="web-dev">Web Development</a></li>
-                    <li><a href="#" class="category" data-category="other-games">Other Games</a></li>
+                    <li><button class="category active" data-category="python">Python Games</button></li>
+                    <li><button class="category" data-category="web-dev">Web Development</button></li>
+                    <li><button class="category" data-category="other-games">Other Games</button></li>
                 </ul>
 
-                <div id="python" class="category-content">
-                    <h1>Python Games</h1>
+                <section id="python" class="category-content active">
+                    <h1 class="category-title">Python Games</h1>
                     <section class="grid-container">
                         <div class="item">
                             <a class="clickable" href="#">
@@ -77,10 +77,10 @@
                             </a>
                         </div>
                     </section>
-                </div>
+                </section>
 
-                <div id="web-dev" class="category-content">
-                    <h1>Web Development</h1>
+                <section id="web-dev" class="category-content">
+                    <h1 class="category-title">Web Development</h1>
                     <section class="grid-container">
                         <div class="item">
                             <a class="clickable" href="#">
@@ -113,10 +113,10 @@
                             </a>
                         </div>
                     </section>
-                </div>
+                </section>
 
-                <div id="other-games" class="category-content">
-                    <h1>Other Games</h1>
+                <section id="other-games" class="category-content">
+                    <h1 class="category-title">Other Games</h1>
                     <section class="grid-container">
                         <div class="item">
                             <a class="clickable" href="runes.html">
@@ -150,14 +150,14 @@
                         </div>
                         
                     </section>
-                </div>
+                </section>
             </div>
 
 
             <!-- Sidebar -->
 
 
-            <div class="sidebar">
+            <aside class="sidebar">
                 <h2>Accessibility</h2>
 
                 <section class="accessibility-group">
@@ -187,9 +187,9 @@
                         <input type="checkbox"> Dyslexia Font
                     </label>
                 </section>
-            </div>
+            </aside>
         </div>
-    </div>
+    </main>
 
     <script src="javascript/header.js"></script>
     <script src="javascript/projects.js"></script>
