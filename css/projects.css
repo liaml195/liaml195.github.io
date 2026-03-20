@@ -15,10 +15,6 @@
 
 /* Page Formatting */
 
-.container {
-    display: flex;
-}
-
 .content {
     display: flex;
     flex: 1;
@@ -58,6 +54,26 @@
 
 .category {
     color: var(--text);
+}
+
+.category::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background-color: currentColor; /* 👈 adapts to theme */
+    border-radius: 5px;
+
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.2s ease;
+}
+
+.category:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 .category-content {
@@ -136,4 +152,8 @@ body.theme-dark {
 body.theme-contrast {
     --bg: black;
     --text: yellow;
+}
+
+body.theme-dark .clickable {
+    background: rgba(255, 255, 255, 0.1);
 }

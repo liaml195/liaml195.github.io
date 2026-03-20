@@ -7,6 +7,17 @@
     font-family: 'Poppins'
 }
 
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+}
+
 body {
     background-color: var(--bg);
     color: var(--text);
@@ -117,18 +128,27 @@ input[type=search]::placeholder {
 
 .sidebar {
     width: 260px;
-    height: 100%;
-    border: 1px solid black;
     padding: 1.5em;
+    background: rgba(0, 0, 0, 0.05);
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
 }
 
 .accessibility-group {
-    margin-bottom: 2em;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 1em;
+    border-radius: 12px;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .accessibility-group h3 {
-    margin-bottom: 0.5em;
-    font-size: 1.1rem;
+    margin-bottom: 0.75em;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 .controls {
@@ -140,20 +160,33 @@ input[type=search]::placeholder {
     flex: 1;
     padding: 0.5em;
     border: none;
-    border-radius: 6px;
-    background: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+
+    background: rgba(0, 0, 0, 0.08);
+    color: var(--text);
+
     cursor: pointer;
-    transition: 0.2s;
+    transition: all 0.2s ease;
 }
 
 .controls button:hover {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.controls button.active {
+    background: black;
+    color: white;
 }
 
 .accessibility-group label {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+
     margin-bottom: 0.5em;
     cursor: pointer;
+    font-size: 0.95rem;
 }
 
 
@@ -171,4 +204,21 @@ body.theme-dark {
 body.theme-contrast {
     --bg: black;
     --text: yellow;
+}
+
+body.theme-dark .sidebar {
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.theme-dark .accessibility-group {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+body.theme-dark .controls button {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+body.theme-dark .controls button:hover {
+    background: rgba(255, 255, 255, 0.2);
 }
