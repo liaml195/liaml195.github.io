@@ -232,8 +232,13 @@ body.theme-dark .clickable {
     height: 3rem;
 }
 
-.content {
+.page-content {
     display: flex;
+    flex: 1;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    align-items: stretch;
+    padding-left: 10%;
+    padding-right: 10%;
 }
