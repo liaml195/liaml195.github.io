@@ -242,3 +242,7 @@ body.theme-dark .clickable {
     padding-left: 10%;
     padding-right: 10%;
 }
+
+body.theme-dark .project-container {
+    background: rgba(255, 255, 255, 0.1);
+}
